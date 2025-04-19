@@ -1,24 +1,36 @@
 import { useNavigate } from "react-router-dom";
-import { clients, excercises } from "../lib/constants";
-import ClientCard from "../components/ClientCard"; // Remove if unused
-import images from "../lib/images";
+import { exercises } from "../lib/constants";
+
 import icons from "../lib/icons";
+import ExerciseCard from "../components/ExerciseCard ";
+import { useState } from "react";
 
 const Excrcises = () => {
   const navigate = useNavigate();
+  const [current, setCurrent] = useState(1)
 
   return (
     <>
       <div className="w-full p-2 h-full flex flex-col gap-4">
         <div className="flex flex-col md:flex-row justify-between w-full gap-2">
           <div className="flex flex-col gap-1">
-            <p className="text-[20px] font-bold">مشتری‌ها</p>
+            <p className="text-[20px] font-bold">حرکت های ورزشی</p>
             <p className="text-[16px] font-semibold text-slate-800 ">
-              مشتری‌هاتو اینجا اضافه کن تا بتونی مدیریتشون کنی
+              ​برای تمرین‌های موجود جستجو کنید و تمرین‌های سفارشی خود را ایجاد
+              کنید.
             </p>
           </div>
           <div className="flex gap-4  max-h-[60px]">
-            <div className="relative">
+            <div className="bg-red-900 text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer">
+              <img src={icons.plus} alt="" className="w-4 h-4 invert" />
+              <button>افزودن حرکت</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex gap-1 h-full overflow-hidden ">
+          <div className="flex-1 p-1 border flex flex-col gap-4">
+            <div className="relative w-full bg-black">
               <img
                 src={icons.search}
                 alt=""
@@ -27,50 +39,29 @@ const Excrcises = () => {
               <input
                 type="text"
                 placeholder="..."
-                className="bg-slate-100 rounded-md md:min-w-[200px] h-full px-8 py-2"
+                className="bg-slate-100 rounded-md  h-full px-8 py-2 w-full"
               />
             </div>
-            <div className="bg-red-900 text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer">
-              <img src={icons.plus} alt="" className="w-4 h-4 invert" />
-              <button>افزودن مشتری</button>
+            <div className="border-t-2 border-slate-400 h-full overflow-y-scroll">
+              {exercises.map((client, index) => (
+                <div key={index} className="border bg-white  hover:bg-slate-50" onClick={()=>setCurrent(index)}>
+                  <td className="px-4 py-2">
+                    <div className="flex gap-1 items-center">
+                      <img src={icons.avatar} alt="" className="w-8 h-8 " />
+                     <div className="flex flex-col ">
+                       <p> {client.name}</p>
+                       <p className="text-slate-500"> {client.muscle}</p>
+                     </div>
+                    </div>
+                  </td>
+                 
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-    
-
-        <div className="w-full p-1">
-          {excercises.length ? (
-            <table className="w-full border border-gray-300 rounded-lg overflow-hidden text-right">
-              <thead className="bg-slate-300 border">
-                <tr>
-                  <th className="px-4 py-2">نام مشتری</th>
-                  <th className="px-4 py-2"> برنامه</th>
-                  <th className="px-4 py-2"> 7 روز اخیر</th>
-                  <th className="px-4 py-2">وضعیت</th>
-                </tr>
-              </thead>
-              <tbody>
-                {excercises.map((client, index) => (
-                  <tr
-                    key={index}
-                    className="border bg-white  hover:bg-slate-50"
-                  >
-                    <td className="px-4 py-2">
-                      <div className="flex gap-1 items-center">
-                        <img src={icons.avatar} alt="" className="w-4 h-4 " />
-                        <p> {client.name}</p>
-                      </div>
-                    </td>
-                    <td className="px-4 py-2">{client.program}</td>
-                    <td className="px-4 py-2">{client.program}</td>
-                    <td className="px-4 py-2">{client.status}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <p>آیتمی وجود ندارد ...</p>
-          )}
+          <div className="bg-white flex-[3] h-full">
+          <ExerciseCard exercise={exercises[current]} />
+          </div>
         </div>
       </div>
     </>
