@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { clients } from "../lib/constants";
+import { clients, excercises } from "../lib/constants";
 import ClientCard from "../components/ClientCard"; // Remove if unused
 import images from "../lib/images";
 import icons from "../lib/icons";
 
-const BankAccountList = () => {
+const Excrcises = () => {
   const navigate = useNavigate();
 
   return (
@@ -39,7 +39,7 @@ const BankAccountList = () => {
     
 
         <div className="w-full p-1">
-          {clients.length ? (
+          {excercises.length ? (
             <table className="w-full border border-gray-300 rounded-lg overflow-hidden text-right">
               <thead className="bg-slate-300 border">
                 <tr>
@@ -50,7 +50,7 @@ const BankAccountList = () => {
                 </tr>
               </thead>
               <tbody>
-                {clients.map((client, index) => (
+                {excercises.map((client, index) => (
                   <tr
                     key={index}
                     className="border bg-white  hover:bg-slate-50"
@@ -77,4 +77,4 @@ const BankAccountList = () => {
   );
 };
 
-export default BankAccountList;
+export default Excrcises;

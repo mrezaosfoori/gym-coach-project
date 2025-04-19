@@ -8,21 +8,14 @@ import icons from "../lib/icons";
 
 const SideBar = () => {
   const navigate = useNavigate();
-  const location = useLocation();
+
   const [activeMenu, setActiveMenu] = useState(null);
 
-  useEffect(() => {
-    const matchedIndex = sidebar.findIndex((nav) =>
-      location.pathname.startsWith(nav.path)
-    );
-    setActiveMenu(matchedIndex);
-  }, [location.pathname]);
+
 
   const handleMenuClick = (index, nav) => {
     setActiveMenu(index);
-    const targetPath = nav.subNav?.length
-      ? nav.path + nav.subNav[0].path
-      : nav.path;
+    const targetPath = nav.path
     navigate(targetPath);
   };
 
@@ -55,8 +48,8 @@ const SideBar = () => {
               {isActive && (
                 <>
                   <div className="w-10 h-10 bg-[#c0c0c0] absolute top-0 left-0 -translate-y-[100%] z-10" />
-                  <div className="w-10 h-10 bg-[#660000] absolute top-0 left-0 -translate-y-full rounded-bl-[20px] z-10" />
-                  <div className="w-10 h-10 bg-[#5e1414] absolute bottom-0  translate-y-full left-0 z-20 rounded-tl-[20px] " />
+                  <div className="w-10 h-10 bg-[#660000] absolute top-0 left-0 -translate-y-full rounded-bl-[40px] z-10" />
+                  <div className="w-10 h-10 bg-[#660000] absolute bottom-0  translate-y-full left-0 z-20 rounded-tl-[40px] " />
                   <div className="w-10 h-10 bg-[#c0c0c0] absolute bottom-0 left-0 translate-y-full z-10  " />
                 </>
               )}

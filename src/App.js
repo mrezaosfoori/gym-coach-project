@@ -6,6 +6,7 @@ import AppLayout from "./components/AppLayout";
 import Driver from "./pages/Driver";
 import Dashboard from "./pages/Dashboard";
 import Clients from "./pages/Clients";
+import Excrcises from "./pages/Excrcises";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route element={<AppLayout />}>
       <Route path="/" element={<Dashboard />} />
       <Route path="/clients" element={<Clients />} />
+      <Route path="/excrcises" element={<Excrcises />} />
         <Route path="/passngers" element={<Pasanger />} />
         <Route path="/driver" element={<Driver />} />
       </Route>

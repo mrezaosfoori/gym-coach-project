@@ -4,6 +4,7 @@ import logo from "../../assets/icons/a6107cee-78d4-4579-a59f-b6adbeec371b.png"
 import search from "../../assets/icons/searchIcon.svg"
 import avatar from "../../assets/icons/avatar-svgrepo-com.svg"
 import plus from "../../assets/icons/plus-svgrepo-com.svg"
+import hamburger from "../../assets/icons/hamburger.svg"
 
 
-export default {driver,seat,logo,avatar,plus,search}
+export default {driver,seat,logo,avatar,plus,search,hamburger}
