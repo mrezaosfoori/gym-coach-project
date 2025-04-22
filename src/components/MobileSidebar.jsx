@@ -36,10 +36,16 @@ const MobileSidebar = () => {
           </div>
           <p className="text-[28px] font-semibold text-white">Edu Era</p>
         </div>
-        <img src={icons.hamburger} alt="Logo" className="w-8 h-8" />
+        <img
+          src={icons.hamburger}
+          alt="Logo"
+          className="w-8 h-8"
+          onClick={() => setShowNavabr(true)}
+        />
       </div>
       <div
-        className={`min-w-[240px] text-title-sm-regular rounded-lg flex flex-col justify-between h-full ${showNavbar ? "block" : "hidden"}`}
+        onMouseLeave={() => setShowNavabr(false)}
+        className={`min-w-[240px] text-title-sm-regular rounded-lg flex flex-col justify-between h-full transition-all duration-700 ${showNavbar ? "fixed left-0 top-0 bg-slate-300 opacity-100" : "fixed left-[-100%] top-0"}`}
       >
         {/* Brand */}
         <div className="flex gap-6 items-center px-4 pt-4">
@@ -57,23 +63,13 @@ const MobileSidebar = () => {
             return (
               <div
                 key={index}
-                className={`relative flex justify-between items-center text-[20px] text-white py-4 px-8 rounded-r-[20px] cursor-pointer hover:border-b-2 hover:border-b-primary-40 ${
-                  isActive ? "bg-[#c0c0c0]" : "bg-[#660000]"
+                className={`relative flex justify-between items-center text-[20px] py-4 px-8 rounded-r-[20px] cursor-pointer hover:border-b-2 hover:border-b-primary-40 ${
+                  isActive ? "bg-[#c0c0c0] " : "text-black"
                 }`}
                 onClick={() => handleMenuClick(index, nav)}
                 aria-expanded={isActive}
                 aria-controls={`submenu-${index}`}
               >
-                {/* Decorative shapes for active item */}
-                {isActive && (
-                  <>
-                    <div className="w-10 h-10 bg-[#c0c0c0] absolute top-0 left-0 -translate-y-[100%] z-10" />
-                    <div className="w-10 h-10 bg-[#660000] absolute top-0 left-0 -translate-y-full rounded-bl-[40px] z-10" />
-                    <div className="w-10 h-10 bg-[#660000] absolute bottom-0  translate-y-full left-0 z-20 rounded-tl-[40px] " />
-                    <div className="w-10 h-10 bg-[#c0c0c0] absolute bottom-0 left-0 translate-y-full z-10  " />
-                  </>
-                )}
-
                 <div
                   className={`flex items-center gap-2 ${isActive ? "text-black font-bold" : ""}`}
                 >

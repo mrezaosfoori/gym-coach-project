@@ -96,5 +96,76 @@ export const clients = [
     image: "https://source.unsplash.com/featured/?push-up",     // Unsplash :contentReference[oaicite:9]{index=9}
     gif: "https://tenor.com/view/push-up-gif-12345678"   
   }));
+
+
+  export const exerciseTypes = [
+    { value: "", label: "همه", class: "" },
+    {
+      value: "cardio",
+      label: "کاردیو",
+      class: "text-blue-90 bg-blue-10 p-2 rounded-md",
+    },
+    {
+      value: "strength",
+      label: "تمرین قدرتی",
+      class: "text-red-90 bg-red-10 p-2 rounded-md",
+    },
+    {
+      value: "flexibility",
+      label: "انعطاف‌پذیری",
+      class: "text-green-90 bg-green-10 p-2 rounded-md",
+    },
+    {
+      value: "balance",
+      label: "تعادل",
+      class: "text-purple-90 bg-purple-10 p-2 rounded-md",
+    },
+    {
+      value: "endurance",
+      label: "استقامت",
+      class: "text-yellow-90 bg-yellow-10 p-2 rounded-md",
+    },
+    {
+      value: "mobility",
+      label: "تحرک",
+      class: "text-teal-90 bg-teal-10 p-2 rounded-md",
+    },
+  ];
+
+  export const equipmentOptions = [
+    { value: "", label: "همه", class: "" },
+    { value: "dumbbell", label: "دمبل", class: "" },
+    { value: "barbell", label: "هالتر", class: "" },
+    { value: "machine", label: "دستگاه", class: "" },
+    { value: "bodyweight", label: "وزن بدن", class: "" },
+    { value: "kettlebell", label: "کتل‌بل", class: "" },
+    { value: "resistance_band", label: "کش تمرینی", class: "" },
+    { value: "cable", label: "کابل", class: "" },
+    { value: "medicine_ball", label: "مدیسن‌بال", class: "" },
+  ];
+
+  export const primaryMuscleOptions = [
+    { value: "", label: "همه", class: "" },
+    { value: "chest", label: "سینه", class: "" },
+    { value: "back", label: "پشت", class: "" },
+    { value: "shoulders", label: "سرشانه", class: "" },
+    { value: "biceps", label: "بازو (جلو بازو)", class: "" },
+    { value: "triceps", label: "پشت بازو", class: "" },
+    { value: "legs", label: "پاها", class: "" },
+    { value: "abs", label: "شکم", class: "" },
+    { value: "glutes", label: "سرینی", class: "" },
+    { value: "calves", label: "ساق پا", class: "" },
+  ];
+
+
+  export const otherMuscleOptions = [
+    { value: "", label: "هیچ‌کدام", class: "" },
+    { value: "forearms", label: "ساعد", class: "" },
+    { value: "traps", label: "کول", class: "" },
+    { value: "obliques", label: "پهلو", class: "" },
+    { value: "hip_flexors", label: "فلکسور ران", class: "" },
+    { value: "adductors", label: "کشاله ران", class: "" },
+    { value: "hamstrings", label: "پشت ران", class: "" },
+  ];
   
   
