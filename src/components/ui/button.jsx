@@ -14,7 +14,7 @@ const Button = (props) => {
       )}
     >
       {" "}
-      <img src={icon} alt="" className="w-4 h-4 " />
+     {icon && <img src={icon} alt="" className="w-4 h-4 " />}
       {children}
     </button>
   );

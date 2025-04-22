@@ -94,7 +94,7 @@ export const clients = [
       `مرحله دوم: اجرای صحیح ${name}.`
     ],
     image: "https://source.unsplash.com/featured/?push-up",     // Unsplash :contentReference[oaicite:9]{index=9}
-    gif: "https://tenor.com/view/push-up-gif-12345678"   
+    gif: "https://i.gifer.com/4Edt.gif"   
   }));
 
 

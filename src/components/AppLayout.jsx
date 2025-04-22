@@ -10,10 +10,10 @@ const AppLayout = () => {
       </div>
 
       {/* mobile navabr */}
-      <div className="">
+      <div className="z-[9999]">
         <MobileSidebar />
       </div>
-      <div className="lg:w-3/4 bg-[#C0C0C0] lg:rounded-[48px] lg:p-4">
+      <div className="lg:w-3/4 bg-[#C0C0C0] lg:rounded-[48px] lg:p-4 h-full">
         <Outlet />
       </div>
     </div>

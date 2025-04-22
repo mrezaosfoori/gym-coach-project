@@ -5,6 +5,9 @@ import icons from "../lib/icons";
 import ExerciseCard from "../components/ExerciseCard ";
 import { useState } from "react";
 import Button from "../components/ui/button";
+import Modal from "../components/shared/Modal";
+import ExerciseForm from "./../components/forms/ExerciseForm";
+import ExerciseSideBar from "../components/ExerciseSideBar";
 
 const Excrcises = () => {
   const navigate = useNavigate();
@@ -22,56 +25,40 @@ const Excrcises = () => {
             </p>
           </div>
 
-          <Button
-            icon={icons.plus}
-            className={"w-full bg-slate-100 text-black hover:bg-slate-200"}
+          <Modal
+            button={
+              <Button
+                icon={icons.plus}
+                className={"w-full bg-slate-100 text-black hover:bg-slate-200"}
+              >
+                افزودن حرکت جدید
+              </Button>
+            }
           >
-             افزودن حرکت جدید
-          </Button>
-
-          <Button className={"w-full bg-blue-900 text-white hover:bg-blue-700"}>
-            انتخاب حرکت
-          </Button>
+            <ExerciseForm />
+          </Modal>
+          <Modal
+            button={
+              <Button
+                className={"w-full bg-blue-900 text-white hover:bg-blue-700"}
+              >
+                انتخاب حرکت
+              </Button>
+            }
+          >
+            <ExerciseSideBar
+              setCurrent={setCurrent}
+              className={
+                "flex flex-col gap-4 w-full flex-1 bg-white p-2 rounded-xl max-w-[684px] min-w-[360px] max-h-[800px] overflow-y-scroll"
+              }
+            />
+          </Modal>
         </div>
 
-        <div className="flex gap-1 h-full overflow-hidden ">
-          <div className="flex-1 p-1 border hidden lg:flex flex-col gap-4">
-            <div className="relative w-full bg-black">
-              <img
-                src={icons.search}
-                alt=""
-                className="w-4 h-4 absolute top-1/2 -translate-y-1/2 left-3"
-              />
-              <input
-                type="text"
-                placeholder="..."
-                className="bg-slate-100 rounded-md  h-full px-8 py-2 w-full"
-              />
-            </div>
-            <div className="border-t-2 border-slate-400 h-full overflow-y-scroll">
-              {exercises.map((client, index) => (
-                <div
-                  key={index}
-                  className="border bg-white  hover:bg-slate-50"
-                  onClick={() => setCurrent(index)}
-                >
-                  <td className="px-4 py-2">
-                    <div className="flex gap-1 items-center">
-                      <img src={icons.avatar} alt="" className="w-8 h-8 " />
-                      <div className="flex flex-col ">
-                        <p> {client.name}</p>
-                        <p className="text-slate-500"> {client.muscle}</p>
-                      </div>
-                    </div>
-                  </td>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="bg-white flex-[3] h-full">
-            <ExerciseCard exercise={exercises[current]} />
-          </div>
-        </div>
+     
+      
+          <ExerciseCard exercise={exercises[current]} />
+       
       </div>
     </>
   );
