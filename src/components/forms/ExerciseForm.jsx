@@ -4,7 +4,15 @@ import CustomInput from "../custom/CustomInput";
 import CustomSelect from "../custom/CustomSelect";
 // import  DateInput  from "../custom/CustomInput";
 import { useNavigate } from "react-router-dom";
-import { equipmentOptions, exerciseTypes, otherMuscleOptions, primaryMuscleOptions } from "../../lib/constants";
+import {
+  equipmentOptions,
+  exerciseTypes,
+  otherMuscleOptions,
+  primaryMuscleOptions,
+} from "../../lib/constants";
+import ImageFileUoload from "../custom/ImageFileUoload";
+import TextArea from "../custom/TextArea";
+import ExerciseFormUploader from "../custom/ExerciseFormUploader";
 
 export default function ExerciseForm({ pageType, userData, userId, disabled }) {
   const navigate = useNavigate();
@@ -22,8 +30,14 @@ export default function ExerciseForm({ pageType, userData, userId, disabled }) {
     <div className="flex flex-col gap-4 w-full flex-1 bg-neutral-00 p-2 rounded-xl max-w-[684px]">
       <form
         // onSubmit={handleSubmit(processForm)}
-        className={`grid grid-cols-1 w-full h-full gap-4 bg-white  `}
+        className={`space-y-4  `}
       >
+        <ImageFileUoload
+          emptyAvatar={true}
+          pic_type={"USER_PROFILE"}
+          acceptedFormats={[".png", ".jpeg", ".jpg", ".webp"]}
+        />
+
         <CustomInput
           register={register}
           name={"mobile"}
@@ -31,14 +45,7 @@ export default function ExerciseForm({ pageType, userData, userId, disabled }) {
           type={"text"}
           errors={errors.mobile}
         />
-        <CustomSelect
-          register={register}
-          name={"mobile"}
-          label={"نام حرکت"}
-          type={"text"}
-          errors={errors.mobile}
-          options={exerciseTypes}
-        />
+
         <CustomSelect
           register={register}
           name={"equipment"}
@@ -62,6 +69,22 @@ export default function ExerciseForm({ pageType, userData, userId, disabled }) {
           type={"text"}
           errors={errors.mobile}
           options={otherMuscleOptions}
+        />
+
+        <TextArea
+          register={register}
+          name={"description"}
+          placeholder={"شرح درخواست"}
+          label={"شرح"}
+          type={"text"}
+          className={"col-span-2 xl:col-span-2"}
+          disabled={disabled}
+        />
+         <ExerciseFormUploader
+         label={"الحاق ویدیو"}
+          emptyAvatar={true}
+          pic_type={"USER_PROFILE"}
+          acceptedFormats={[".png", ".jpeg", ".jpg", ".webp"]}
         />
 
         {/* <DateInput

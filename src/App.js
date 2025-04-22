@@ -7,7 +7,7 @@ import Driver from "./pages/Driver";
 import Dashboard from "./pages/Dashboard";
 import Clients from "./pages/Clients";
 import Excrcises from "./pages/Excrcises";
-import ExcrcisesForm from "./components/forms/Exercise";
+import ExcrcisesForm from "./components/forms/ExerciseForm";
 
 function App() {
   return (
