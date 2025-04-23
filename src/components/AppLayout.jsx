@@ -13,7 +13,7 @@ const AppLayout = () => {
       <div className="z-[9999]">
         <MobileSidebar />
       </div>
-      <div className="lg:w-3/4 bg-[#C0C0C0] lg:rounded-[48px] lg:p-4 h-full">
+      <div className="lg:w-3/4 bg-[#faf4f4] lg:rounded-[48px] lg:p-4 h-full overflow-y-scroll">
         <Outlet />
       </div>
     </div>

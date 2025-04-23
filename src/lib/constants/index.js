@@ -89,12 +89,16 @@ export const clients = [
     muscle: muscles[i % muscles.length],
     equipment: equipments[i % equipments.length],
     difficulty: difficulties[i % difficulties.length],
-    instructions: [
-      `مرحله اول: آماده‌سازی حرکت ${name}.`,
-      `مرحله دوم: اجرای صحیح ${name}.`
+    instructions:[
+      "یک چرخ شکم بردارید و روی زانوهای خود قرار بگیرید.",
+      "به جلو خم شوید و چرخ شکم را روی زمین قرار دهید، در حالی که با هر دو دست آن را محکم نگه داشته‌اید.",
+      "عضلات شکم خود را منقبض کنید و نفس بکشید.",
+      "چرخ شکم را به سمت جلو حرکت دهید و بدن خود را کشیده کنید.",
+      "تا جایی که عضلات شکم‌تان اجازه می‌دهند به جلو بروید، سپس چرخ را به حالت اولیه برگردانید."
     ],
     image: "https://source.unsplash.com/featured/?push-up",     // Unsplash :contentReference[oaicite:9]{index=9}
-    gif: "https://i.gifer.com/4Edt.gif"   
+    gif: "https://i.gifer.com/4Edt.gif"   ,
+    youtube: "https://www.youtube.com/shorts/PPmvh7gBTi0"   
   }));
 
 

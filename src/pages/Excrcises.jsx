@@ -15,7 +15,7 @@ const Excrcises = () => {
 
   return (
     <>
-      <div className="w-full h-full flex flex-col gap-4 p-4">
+      <div className="w-full  flex flex-col gap-4 p-4  ">
         <div className="flex flex-col md:flex-row justify-between w-full gap-2">
           <div className="flex flex-col gap-1">
             <p className="text-[20px] font-bold">حرکت های ورزشی</p>
@@ -29,7 +29,7 @@ const Excrcises = () => {
             button={
               <Button
                 icon={icons.plus}
-                className={"w-full bg-slate-100 text-black hover:bg-slate-200"}
+                className={"w-full bg-slate-100 text-black hover:bg-slate-200 border"}
               >
                 افزودن حرکت جدید
               </Button>
@@ -40,7 +40,7 @@ const Excrcises = () => {
           <Modal
             button={
               <Button
-                className={"w-full bg-blue-900 text-white hover:bg-blue-700"}
+                className={"w-full bg-blue-900 text-white hover:bg-blue-700 border"}
               >
                 انتخاب حرکت
               </Button>
