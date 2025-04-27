@@ -20,6 +20,10 @@ backdrop-filter: blur(55px);
 
 }
 
+.bg-main{
+  background: #6D63FF;
+background: linear-gradient(90deg,rgba(109, 99, 255, 1) 0%, rgba(36, 30, 120, 1) 100%);
+}
 
 @custom-variant dark (&:is(.dark *));
  
@@ -139,4 +143,30 @@ backdrop-filter: blur(55px);
   color: #fff;
 }
  
+
+
+
+
+/* width */
+.dark-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 0px;
+}
+
+/* Track */
+.dark-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.dark-scrollbar::-webkit-scrollbar-thumb {
+  background: #6D63FF;
+background: linear-gradient(180deg,rgba(109, 99, 255, 1) 0%, rgba(36, 30, 120, 1) 100%);
+}
+
+/* Handle on hover */
+.dark-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #441963;
+}
+
 

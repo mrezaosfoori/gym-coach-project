@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Clients from "./pages/Clients";
 import Excrcises from "./pages/Excrcises";
 import ExcrcisesForm from "./components/forms/ExerciseForm";
+import Chats from "./pages/Chat";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="/excrcises" element={<Excrcises />} />
         <Route path="/passngers" element={<Pasanger />} />
         <Route path="/driver" element={<Driver />} />
-        <Route path="/chat" element={<ExcrcisesForm />} />
+        <Route path="/chat" element={<Chats />} />
       </Route>
       <Route path="/drives" element={<Drives />} />
 

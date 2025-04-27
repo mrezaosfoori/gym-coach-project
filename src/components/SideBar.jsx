@@ -20,7 +20,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className="min-w-[240px] text-title-sm-regular rounded-lg flex flex-col justify-between h-full">
+    <div className="min-w-[240px] text-title-sm-regular rounded-lg flex flex-col justify-between h-full bg-red-500 p-3">
       {/* Brand */}
       <div className="flex gap-6 items-center px-4 pt-4">
         <div className="text-[28px] font-semibold text-white bg-[#6553B2] w-[56px] h-[56px] flex items-center justify-center rounded-2xl">

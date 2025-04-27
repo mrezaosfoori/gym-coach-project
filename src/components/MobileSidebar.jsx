@@ -21,10 +21,9 @@ const MobileSidebar = () => {
 
   const handleMenuClick = (index, nav) => {
     setActiveMenu(index);
-    const targetPath = nav.subNav?.length
-      ? nav.path + nav.subNav[0].path
-      : nav.path;
+    const targetPath = nav.path
     navigate(targetPath);
+    setShowNavabr(false)
   };
 
   return (
@@ -45,11 +44,11 @@ const MobileSidebar = () => {
       </div>
       <div
         onMouseLeave={() => setShowNavabr(false)}
-        className={`min-w-[240px] text-title-sm-regular rounded-lg flex flex-col justify-between h-full transition-all duration-700 ${showNavbar ? "fixed left-0 top-0 bg-slate-300 opacity-100" : "fixed left-[-100%] top-0"}`}
+        className={`min-w-[240px]  bg-main text-white text-title-sm-regular rounded-lg flex flex-col justify-between h-full transition-all duration-500 ${showNavbar ? "fixed left-0 top-0 bg-slate-300 opacity-100" : "fixed left-[-100%] top-0"}`}
       >
         {/* Brand */}
-        <div className="flex gap-6 items-center px-4 pt-4">
-          <div className="text-[28px] font-semibold text-white bg-[#6553B2] w-[56px] h-[56px] flex items-center justify-center rounded-2xl">
+        <div className="flex gap-6 items-center px-4 pt-4 ">
+          <div className="text-[28px] font-semibold  bg-[#6553B2] w-[56px] h-[56px] flex items-center justify-center rounded-2xl">
             <img src={icons.logo} alt="Logo" />
           </div>
           <p className="text-[28px] font-semibold text-white">Edu Era</p>
@@ -64,7 +63,7 @@ const MobileSidebar = () => {
               <div
                 key={index}
                 className={`relative flex justify-between items-center text-[20px] py-4 px-8 rounded-r-[20px] cursor-pointer hover:border-b-2 hover:border-b-primary-40 ${
-                  isActive ? "bg-[#c0c0c0] " : "text-black"
+                  isActive ? "bg-[#c0c0c0] " : "text-white"
                 }`}
                 onClick={() => handleMenuClick(index, nav)}
                 aria-expanded={isActive}
@@ -92,7 +91,7 @@ const MobileSidebar = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="bg-white w-[236px] h-[300px] mx-auto">asda</div>
+        <div className="bg-white w-4/5 h-[300px] mx-auto  ">asda</div>
       </div>
     </>
   );
