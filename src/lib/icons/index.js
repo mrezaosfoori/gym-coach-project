@@ -8,6 +8,11 @@ import hamburger from "../../assets/icons/hamburger.svg";
 import camera from "../../assets/icons/camera-add-svgrepo-com.svg";
 import setting from "../../assets/icons/setting-2-svgrepo-com.svg";
 import note from "../../assets/icons/note-svgrepo-com.svg";
+import chats from "../../assets/sidebars/chat-unread-svgrepo-com.svg";
+import dashboard from "../../assets/sidebars/dashboard-svgrepo-com (1).svg";
+import programs from "../../assets/sidebars/folder-svgrepo-com.svg";
+import exercise from "../../assets/sidebars/gym-dumbbell-svgrepo-com.svg";
+import clients from "../../assets/sidebars/users-svgrepo-com.svg";
 
 export default {
   driver,
@@ -20,4 +25,9 @@ export default {
   camera,
   setting,
   note,
+  chats,
+  dashboard,
+  programs,
+  exercise,
+  clients
 };

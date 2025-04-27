@@ -6,8 +6,8 @@ body {
 
   background: radial-gradient(
     circle,
-    #660000 0%,
-    #660000 100%
+    #F1F1F1 0%,
+    #F1F1F1 100%
   );
 }
 
@@ -151,22 +151,26 @@ background: linear-gradient(90deg,rgba(109, 99, 255, 1) 0%, rgba(36, 30, 120, 1)
 .dark-scrollbar::-webkit-scrollbar {
   width: 3px;
   height: 0px;
+  border-radius: 16px;
 }
 
 /* Track */
 .dark-scrollbar::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 16px;
 }
 
 /* Handle */
 .dark-scrollbar::-webkit-scrollbar-thumb {
   background: #6D63FF;
 background: linear-gradient(180deg,rgba(109, 99, 255, 1) 0%, rgba(36, 30, 120, 1) 100%);
+border-radius: 16px;
 }
 
 /* Handle on hover */
 .dark-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #441963;
+  border-radius: 16px;
 }
 
 
