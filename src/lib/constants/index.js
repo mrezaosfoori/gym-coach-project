@@ -38,6 +38,44 @@ export const sidebar = [
   },
 ];
 
+export const dashboardCards = [
+  {
+    id: 1,
+    title: "مشتریان فعال در ۷ روز گذشته",
+    icon: icons.programs,
+    detailButtonText: "مشاهده جزئیات",
+    sidebarTitle: "لیست مشتریان فعال",
+    users: [
+      { id: 1, name: "علی رضایی", avatar: "/avatars/ali.png" },
+      { id: 2, name: "مریم احمدی", avatar: "/avatars/maryam.png" },
+      { id: 3, name: "حسین موسوی", avatar: "/avatars/hossein.png" },
+    ],
+  },
+  {
+    id: 2,
+    title: "مشتریان غیرفعال در ۷ روز گذشته",
+    icon: icons.programs,
+    detailButtonText: "مشاهده جزئیات",
+    sidebarTitle: "لیست مشتریان غیرفعال",
+    users: [
+    ],
+  },
+  {
+    id: 3,
+    title: "مجموع مشتریان",
+    icon: icons.programs,
+    detailButtonText: "مشاهده جزئیات",
+    sidebarTitle: "لیست تمامی مشتریان",
+    users: [
+      { id: 6, name: "لیلا محمدی", avatar: "/avatars/leila.png" },
+      { id: 7, name: "رضا عباسی", avatar: "/avatars/reza.png" },
+      { id: 8, name: "سارا خالقی", avatar: "/avatars/sara.png" },
+      { id: 9, name: "محمد شریفی", avatar: "/avatars/mohammad.png" },
+    ],
+  },
+];
+
+
 export const clients = [
     {
       id: 1,
@@ -254,6 +292,16 @@ export const clients = [
     },
   
  
+  ];
+
+  export const lastWeekData = [
+    { day: 'دوشنبه', date: '۱۴۰۴/۰۲/۰۱', activities: 12 },
+    { day: 'سه‌شنبه', date: '۱۴۰۴/۰۲/۰۲', activities: 15 },
+    { day: 'چهارشنبه', date: '۱۴۰۴/۰۲/۰۳', activities: 9 },
+    { day: 'پنجشنبه', date: '۱۴۰۴/۰۲/۰۴', activities: 20 },
+    { day: 'جمعه', date: '۱۴۰۴/۰۲/۰۵', activities: 17 },
+    { day: 'شنبه', date: '۱۴۰۴/۰۲/۰۶', activities: 14 },
+    { day: 'یکشنبه', date: '۱۴۰۴/۰۲/۰۷', activities: 22 },
   ];
   
   
