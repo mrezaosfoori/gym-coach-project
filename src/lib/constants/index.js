@@ -228,5 +228,32 @@ export const clients = [
     },
   ];
   
+
+
+  export const loginSidebarMenu = [
+    {
+      id: 1,
+      title: "اهداف  ",
+      path: "/goals",
+      icon: icons.clients,
+     
+    },
+    {
+      id: 2,
+      title: "رژیم",
+      path: "/diet",
+      active: false,
+      icon: icons.clients,
+    },
+    {
+      id: 3,
+      title: "تنظیمات ",
+      path: "/setting",
+      active: false,
+      icon: icons.programs,
+    },
+  
+ 
+  ];
   
   

@@ -3,8 +3,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import arrowDown from "../assets/images/downArrow.svg";
 import arrowUp from "../assets/images/upArrow.svg";
-import { sidebar } from "../lib/constants";
+import { loginSidebarMenu } from "../lib/constants";
 import icons from "../lib/icons";
+import SemiCircleGauge from "./shared/SemiCircleGauge";
 
 const LoginSidebar = () => {
   const navigate = useNavigate();
@@ -18,42 +19,52 @@ const LoginSidebar = () => {
   };
 
   return (
-    <div className=" text-title-sm-regular   flex-col justify-between h-full p-3  hidden lg:block bg-white">
+    <div className="flex flex-col justify-between h-full py-[20px] px-4 bg-white shadow-xl ">
       {/* Brand */}
-      <div className="flex gap-3  px-1 pt-4">
-        <img src={icons.avatar} alt="Logo" className="rounded-full w-6 h-6" />
+      <div className="flex gap-2 items-center">
+        <img
+          src={icons.avatar}
+          alt="Logo"
+          className="rounded-full w-12 h-12 bg-white border-2 border-purple-400 p-1"
+        />
 
-        <p className="text-[21px] font-semibold  line-clamp-1 min-w-fit">
-          osfoori
-        </p>
+        <div>
+          <p className="text-[16px] font-semibold  line-clamp-1 min-w-fit">
+            محمدرضا عصفوری
+          </p>
+          <p className="text-[13px] text-slate-500">4 سال پیش</p>
+        </div>
       </div>
 
       {/* Menu Items */}
-      <div className="flex flex-col items-center ">
-        {sidebar.map((nav, index) => {
-          const isActive = activeMenu === index;
-
+      <div className="flex flex-col items-center   ">
+        {loginSidebarMenu.map((nav, index) => {
           return (
             <div
+              className="w-full flex justify-between py-4  min-w-[200px]"
               key={index}
-              className={`relative flex justify-between items-center text-[20px] text-white py-4 px-2 rounded-r-[20px] cursor-pointer  `}
               onClick={() => handleMenuClick(index, nav)}
-              aria-expanded={isActive}
-              aria-controls={`submenu-${index}`}
             >
-              <div
-                className={`flex justify-center items-center gap-2 ${isActive ? "text-black font-bold" : ""}`}
-              >
-                {nav.icon && (
+              <div className="flex items-center gap-2">
+                <div className="bg-slate-200 rounded-full p-3 ">
                   <img
-                    width={22}
-                    height={22}
+                    width={28}
+                    height={28}
                     src={nav.icon}
                     alt="icon"
-                    className={` ${isActive ? "invert shadow-md" : ""}`}
+                    className=" rotate-90 rounded-full"
                   />
-                )}
-                <p className="">{nav.title}</p>
+                </div>
+                <p className="text-black">{nav.title}</p>
+              </div>
+              <div className="p-2">
+                <img
+                  width={28}
+                  height={28}
+                  src={arrowDown}
+                  alt="icon"
+                  className=" rotate-90 rounded-md border-2 border-slate-200 cursor-pointer"
+                />
               </div>
             </div>
           );
@@ -61,6 +72,10 @@ const LoginSidebar = () => {
       </div>
 
       {/* Bottom Section */}
+      <div className="flex flex-col justify-center items-center gap-4">
+        <p>هدف کاهش وزن</p>
+        <SemiCircleGauge value={"55"} max={"200"}/>
+      </div>
     </div>
   );
 };

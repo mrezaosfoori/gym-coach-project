@@ -6,7 +6,7 @@ import LoginSidebar from "./LoginSidebar";
 const AppLayout = () => {
   return (
  <div className="flex">
-     <div className="flex-1 flex flex-col lg:flex-row lg:px-8 lg:p-4 h-screen md:gap-8 lg:gap-8 ">
+     <div className="flex-1 flex flex-col lg:flex-row lg:px-8 lg:p-4 h-screen lg:gap-8  ">
        <div className=" ">
          <SideBar />
        </div>
@@ -20,7 +20,7 @@ const AppLayout = () => {
        </div>
       
      </div>
-     <div className=" ">
+     <div className="min-w-[200px] hidden lg:block ">
          <LoginSidebar />
        </div>
   

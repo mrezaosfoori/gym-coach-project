@@ -22,7 +22,7 @@ const ExerciseCard = ({ exercise }) => {
         <ExerciseForm />
       </Modal>
 
-      <div className="md:flex bg-white p-4 rounded-lg space-y-4 border">
+      <div className="flex flex-col justify-between lg:flex-row  gap-4 md:flex bg-white p-4 rounded-lg  border">
         <ul className="mt-2 text-gray-500 space-y-2">
           <li className="font-bold text-slate-400">
             <span className="text-slate-900">نوع:</span> {exercise.type}
@@ -47,7 +47,7 @@ const ExerciseCard = ({ exercise }) => {
           />
         </div>
       </div>
-      <div className="md:flex bg-white p-4 rounded-lg space-y-4 border">
+      <div className="flex flex-col bg-white p-4 rounded-lg space-y-4 border">
         <p>دستور العمل ها</p>
         {exercise.instructions.map((item, index) => (
           <div className="flex items-center gap-2 border-b-2 p-2">

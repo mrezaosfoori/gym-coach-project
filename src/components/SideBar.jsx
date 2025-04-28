@@ -49,7 +49,7 @@ const SideBar = () => {
                     height={22}
                     src={nav.icon}
                     alt="icon"
-                    className={` ${isActive ? "invert shadow-md" : ""}`}
+                    className={` ${isActive ? " bg-white border-2" : "invert"}`}
                   />
                 )}
                 <p className="block lg:hidden">{nav.title}</p>
