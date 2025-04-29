@@ -3,12 +3,11 @@ import icons from "../lib/icons";
 import { dashboardCards } from "../lib/constants";
 import DashboardCard from "../components/shared/DashboardCard";
 import Statistics from "../components/Statistics";
+import LastActivities from "../components/LastActivities";
 
 const Dashboard = () => {
   return (
     <div className="p-4 flex flex-col gap-6  ">
- 
-
       <div className="flex flex-col md:flex-row justify-between w-full gap-2 mb-16">
         <div className="flex flex-col gap-1">
           <p className="text-[20px] font-bold">سلام محمدرضا !</p>
@@ -35,18 +34,26 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-     
+
       <div className="flex  gap-6">
         {dashboardCards.map((item) => {
           return <DashboardCard card={item} />;
         })}
       </div>
-      <div className="flex   gap-4">
+      <div className="flex gap-2  ">
+        <div className="w-1/2">
+          <Statistics />
+        </div>
+        <div className="w-1/2">
+          <LastActivities />
+        </div>
+      </div>
+      {/* <div className="flex   gap-4">
         <ActivityCard title={"ایجاد برنامه"} value={1} />
         <ActivityCard title={"دعوت مشتری"} value={3} />
         <ActivityCard title={"برنامه رو منتقل کن"} value={6} />
-      </div>
-      <Statistics/>
+      </div> */}
+
       {/* asd
       <div className="flex justify-between">
         <div className="flex flex-col gap-4">

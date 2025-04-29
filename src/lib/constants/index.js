@@ -41,7 +41,7 @@ export const sidebar = [
 export const dashboardCards = [
   {
     id: 1,
-    title: "مشتریان فعال در ۷ روز گذشته",
+    title: "مشتریان فعال هفته اخیر",
     icon: icons.programs,
     detailButtonText: "مشاهده جزئیات",
     sidebarTitle: "لیست مشتریان فعال",
@@ -53,7 +53,7 @@ export const dashboardCards = [
   },
   {
     id: 2,
-    title: "مشتریان غیرفعال در ۷ روز گذشته",
+    title: "مشتریان غیرفعال هفته اخیر",
     icon: icons.programs,
     detailButtonText: "مشاهده جزئیات",
     sidebarTitle: "لیست مشتریان غیرفعال",

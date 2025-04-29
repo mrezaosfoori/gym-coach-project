@@ -123,7 +123,7 @@ const LineChart = ({ chartData, timeFrame }) => {
     <Line
       data={data}
       options={options}
-      style={{ backgroundColor: "#f5f5f5" }}
+      
     />
   );
 };
