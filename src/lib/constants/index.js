@@ -42,7 +42,7 @@ export const dashboardCards = [
   {
     id: 1,
     title: "مشتریان فعال هفته اخیر",
-    icon: icons.programs,
+    icon: icons.dashboardcards,
     detailButtonText: "مشاهده جزئیات",
     sidebarTitle: "لیست مشتریان فعال",
     users: [
@@ -54,7 +54,7 @@ export const dashboardCards = [
   {
     id: 2,
     title: "مشتریان غیرفعال هفته اخیر",
-    icon: icons.programs,
+    icon: icons.dashboardcards,
     detailButtonText: "مشاهده جزئیات",
     sidebarTitle: "لیست مشتریان غیرفعال",
     users: [
@@ -63,7 +63,7 @@ export const dashboardCards = [
   {
     id: 3,
     title: "مجموع مشتریان",
-    icon: icons.programs,
+    icon: icons.dashboardcards,
     detailButtonText: "مشاهده جزئیات",
     sidebarTitle: "لیست تمامی مشتریان",
     users: [
@@ -273,7 +273,7 @@ export const clients = [
       id: 1,
       title: "اهداف  ",
       path: "/goals",
-      icon: icons.clients,
+      icon: icons.goals,
      
     },
     {
@@ -281,14 +281,14 @@ export const clients = [
       title: "رژیم",
       path: "/diet",
       active: false,
-      icon: icons.clients,
+      icon: icons.diet,
     },
     {
       id: 3,
       title: "تنظیمات ",
       path: "/setting",
       active: false,
-      icon: icons.programs,
+      icon: icons.setting,
     },
   
  
