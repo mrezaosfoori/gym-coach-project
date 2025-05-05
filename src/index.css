@@ -2,31 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  background: #6d63ff;
+  background: linear-gradient(
+    90deg,
+    rgba(109, 99, 255, 1) 0%,
+    rgba(36, 30, 120, 1) 100%
+  );
+}
 body {
+  background: radial-gradient(circle, #f1f1f1 0%, #f1f1f1 100%);
+}
 
-  background: radial-gradient(
-    circle,
-    #F1F1F1 0%,
-    #F1F1F1 100%
+.glass-effect {
+  background: rgba(39, 7, 7, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(55px);
+  -webkit-backdrop-filter: blur(25px);
+}
+html,
+body {
+  overflow: hidden !important;
+  position: relative !important;
+  
+}
+/* estedad main font include thin to bold fonts  */
+@font-face {
+  font-family: Estedad;
+  src: url(./assets/font/Estedad.woff2);
+}
+* {
+  font-family: "estedad";
+}
+
+.bg-main {
+  background: #6d63ff;
+  background: linear-gradient(
+    90deg,
+    rgba(109, 99, 255, 1) 0%,
+    rgba(36, 30, 120, 1) 100%
   );
 }
 
-.glass-effect{
-  background: rgba(39, 7, 7, 0.3);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(55px);
--webkit-backdrop-filter: blur(25px);
-
-}
-
-.bg-main{
-  background: #6D63FF;
-background: linear-gradient(90deg,rgba(109, 99, 255, 1) 0%, rgba(36, 30, 120, 1) 100%);
-}
-
 @custom-variant dark (&:is(.dark *));
- 
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -62,7 +82,7 @@ background: linear-gradient(90deg,rgba(109, 99, 255, 1) 0%, rgba(36, 30, 120, 1)
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
- 
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -97,7 +117,7 @@ background: linear-gradient(90deg,rgba(109, 99, 255, 1) 0%, rgba(36, 30, 120, 1)
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
 }
- 
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -142,10 +162,6 @@ background: linear-gradient(90deg,rgba(109, 99, 255, 1) 0%, rgba(36, 30, 120, 1)
   border-color: orange !important;
   color: #fff;
 }
- 
-
-
-
 
 /* width */
 .dark-scrollbar::-webkit-scrollbar {
@@ -162,9 +178,13 @@ background: linear-gradient(90deg,rgba(109, 99, 255, 1) 0%, rgba(36, 30, 120, 1)
 
 /* Handle */
 .dark-scrollbar::-webkit-scrollbar-thumb {
-  background: #6D63FF;
-background: linear-gradient(180deg,rgba(109, 99, 255, 1) 0%, rgba(36, 30, 120, 1) 100%);
-border-radius: 16px;
+  background: #6d63ff;
+  background: linear-gradient(
+    180deg,
+    rgba(109, 99, 255, 1) 0%,
+    rgba(36, 30, 120, 1) 100%
+  );
+  border-radius: 16px;
 }
 
 /* Handle on hover */
@@ -176,5 +196,3 @@ border-radius: 16px;
 .chart-container canvas {
   background-color: #7a1515;
 }
-
-

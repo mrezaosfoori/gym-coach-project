@@ -7,7 +7,7 @@ const Chats = () => {
     <>
       <div className="w-full  flex flex-col gap-4 p-4  ">
         <div className="flex flex-col md:flex-row justify-between w-full gap-2">
-          <div className="flex justify-between items-center gap-1 bg-purple-100 p-2">
+          <div className="flex justify-between items-center gap-1  p-2">
             <p className="text-[20px] font-bold">پیام ها</p>
             <div className="flex gap-2">
               <img src={icons.setting} alt="" className="w-4 h-4 " />
@@ -24,7 +24,7 @@ const Chats = () => {
               <input
                 type="text"
                 placeholder="..."
-                className="bg-slate-100 rounded-md w-full h-full px-8 py-2"
+                className="bg-white rounded-md w-full h-full px-8 py-2"
               />
             </div>
           </div>

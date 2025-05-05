@@ -14,7 +14,7 @@ import programs from "../../assets/sidebars/folder-svgrepo-com.svg";
 import exercise from "../../assets/sidebars/gym-dumbbell-svgrepo-com.svg";
 import clients from "../../assets/sidebars/users-svgrepo-com.svg";
 import goals from "../../assets/icons/target-marketing-goal-svgrepo-com.svg";
-import diet from "../../assets/icons/heart-bottle-svgrepo-com.svg";
+import diet from "../../assets/icons/stopwatch-svgrepo-com.svg"
 import dashboardcards from "../../assets/icons/users-svgrepo-com (1).svg";
 
 export default {

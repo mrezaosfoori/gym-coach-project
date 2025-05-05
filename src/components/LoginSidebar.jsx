@@ -46,13 +46,13 @@ const LoginSidebar = () => {
               onClick={() => handleMenuClick(index, nav)}
             >
               <div className="flex items-center gap-2">
-                <div className="bg-slate-200 rounded-full p-3 ">
+                <div className="bg-blue-900 bg-opacity-15 w-[54px] h-[54px] rounded-full p-3  ">
                   <img
                     width={28}
                     height={28}
                     src={nav.icon}
                     alt="icon"
-                    className=" rotate-90 rounded-full"
+                    className=" rotate-90 rounded-full "
                   />
                 </div>
                 <p className="text-black">{nav.title}</p>
@@ -72,9 +72,10 @@ const LoginSidebar = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-col justify-center items-center gap-4">
-        <p>هدف کاهش وزن</p>
-        <SemiCircleGauge value={"55"} max={"200"}/>
+      <div className="flex flex-col justify-center items-center gap-4 w-[300px] h-[300px] ">
+        <p className="text-[22px]">هدف کاهش وزن</p>
+        <p className="text-[22px]">کاهش وزن:<span className="font-bold font ">5 kg</span> درماه  </p>
+        <SemiCircleGauge value={"20"} max={"100"}/>
       </div>
     </div>
   );

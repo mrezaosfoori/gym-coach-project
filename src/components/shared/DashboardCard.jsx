@@ -20,7 +20,7 @@ export default function DashboardCard({ card }) {
         <div className="flex gap-2 max-w-[70%] overflow-hidden">
           {card.users.map((item) => {
             return (
-              <div className="bg-slate-200 rounded-md p-2 ">{item.name}</div>
+              <div className="bg-slate-200 rounded-full p-2 ">{item.name}</div>
             );
           })}
         </div>

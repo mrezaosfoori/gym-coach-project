@@ -46,9 +46,9 @@ export const dashboardCards = [
     detailButtonText: "مشاهده جزئیات",
     sidebarTitle: "لیست مشتریان فعال",
     users: [
-      { id: 1, name: "علی رضایی", avatar: "/avatars/ali.png" },
-      { id: 2, name: "مریم احمدی", avatar: "/avatars/maryam.png" },
-      { id: 3, name: "حسین موسوی", avatar: "/avatars/hossein.png" },
+      { id: 1, name: "علی ", avatar: "/avatars/ali.png" },
+      { id: 2, name: "مریم ", avatar: "/avatars/maryam.png" },
+      { id: 3, name: "حسین ", avatar: "/avatars/hossein.png" },
     ],
   },
   {
@@ -67,10 +67,10 @@ export const dashboardCards = [
     detailButtonText: "مشاهده جزئیات",
     sidebarTitle: "لیست تمامی مشتریان",
     users: [
-      { id: 6, name: "لیلا محمدی", avatar: "/avatars/leila.png" },
-      { id: 7, name: "رضا عباسی", avatar: "/avatars/reza.png" },
-      { id: 8, name: "سارا خالقی", avatar: "/avatars/sara.png" },
-      { id: 9, name: "محمد شریفی", avatar: "/avatars/mohammad.png" },
+      { id: 6, name: "لیلا ", avatar: "/avatars/leila.png" },
+      { id: 7, name: "رضا ", avatar: "/avatars/reza.png" },
+      { id: 8, name: "سارا ", avatar: "/avatars/sara.png" },
+      { id: 9, name: "محمد ", avatar: "/avatars/mohammad.png" },
     ],
   },
 ];

@@ -27,10 +27,10 @@ const BankAccountList = () => {
               <input
                 type="text"
                 placeholder="..."
-                className="bg-slate-100 rounded-md md:min-w-[200px] h-full px-8 py-2"
+                className="bg-white rounded-md md:min-w-[200px] h-full px-8 py-2"
               />
             </div>
-            <div className="bg-red-900 text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer">
+            <div className="bg-main text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer">
               <img src={icons.plus} alt="" className="w-4 h-4 invert" />
               <button>افزودن مشتری</button>
             </div>

@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-
-import arrowDown from "../assets/images/downArrow.svg";
-import arrowUp from "../assets/images/upArrow.svg";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { sidebar } from "../lib/constants";
 import icons from "../lib/icons";
 
@@ -18,13 +15,15 @@ const SideBar = () => {
   };
 
   return (
-    <div className=" text-title-sm-regular   flex-col justify-between h-full p-3 rounded-[50px]   hidden lg:block bg-main">
+    <div className=" text-title-sm-regular   flex-col justify-between h-full p-3 rounded-[50px]   hidden lg:block bg-main w-[140px]">
       {/* Brand */}
-      <div className="flex flex-col gap-3 items-center px-1 pt-4">
+      <div className="flex flex-col gap-1 items-center px-1 pt-4 mb-12">
         <div className="text-[28px] font-semibold text-white bg-[#6553B2] w-[56px] h-[56px] flex items-center justify-center rounded-2xl">
           <img src={icons.logo} alt="Logo" className="rounded-md" />
         </div>
-        <p className="text-[21px] font-semibold text-white line-clamp-1 min-w-fit">Edu Era</p>
+        <p className="text-[21px] font-semibold text-white min-w-[110px] text-center">
+          کمک مربی 
+        </p>
       </div>
 
       {/* Menu Items */}
@@ -60,7 +59,6 @@ const SideBar = () => {
       </div>
 
       {/* Bottom Section */}
-     
     </div>
   );
 };

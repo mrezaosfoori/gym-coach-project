@@ -24,18 +24,21 @@ const ExerciseCard = ({ exercise }) => {
 
       <div className="flex flex-col justify-between lg:flex-row  gap-4 md:flex bg-white p-4 rounded-lg  border">
         <ul className="mt-2 text-gray-500 space-y-2">
-          <li className="font-bold text-slate-400">
-            <span className="text-slate-900">نوع:</span> {exercise.type}
+          <li className="font-bold text-slate-400 text-[20px]">
+            <span className="text-slate-900 text-[20px]">نوع:</span>{" "}
+            {exercise.type}
           </li>
-          <li className="font-bold text-slate-400">
-            <span className="text-slate-900">عضله هدف:</span> {exercise.muscle}
+          <li className="font-bold text-slate-400 text-[20px]">
+            <span className="text-slate-900 text-[20px]">عضله هدف:</span>{" "}
+            {exercise.muscle}
           </li>
-          <li className="font-bold text-slate-400">
-            <span className="text-slate-900">تجهیزات:</span>{" "}
+          <li className="font-bold text-slate-400 text-[20px]">
+            <span className="text-slate-900 text-[20px]">تجهیزات:</span>{" "}
             {exercise.equipment}
           </li>
-          <li className="font-bold text-slate-400">
-            <span className="text-slate-900">سطح:</span> {exercise.difficulty}
+          <li className="font-bold text-slate-400 text-[20px]">
+            <span className="text-slate-900 text-[20px]">سطح:</span>{" "}
+            {exercise.difficulty}
           </li>
         </ul>
 
