@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Drives from "../src/pages/Drives";
 import AppLayout from "./components/AppLayout";
 
 import Dashboard from "./pages/Dashboard";
@@ -18,7 +17,6 @@ function App() {
 
         <Route path="/chat" element={<Chats />} />
       </Route>
-      <Route path="/drives" element={<Drives />} />
 
       {/* Catch-all route for 404 */}
     </Routes>

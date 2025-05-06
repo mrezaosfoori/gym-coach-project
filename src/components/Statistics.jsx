@@ -7,7 +7,7 @@ const Statistics = ({ type, id }) => {
   const [timeFrame, setTimeFrame] = useState("week");
 
   return (
-    <div className="  flex-center  rounded-tr-[80px]  rounded-bl-[80px] min-h-[390px] bg-main p-3 ">
+    <div className="  flex-center   min-h-[390px] bg-main p-1 ">
       <div className="flex justify-between p-3 ">
         <p className="text-white text-[18px] font-semibold">فعالیت‌ها</p>
         <select

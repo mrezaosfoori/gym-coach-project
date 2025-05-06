@@ -17,7 +17,7 @@ const BankAccountList = () => {
               مشتری‌هاتو اینجا اضافه کن تا بتونی مدیریتشون کنی
             </p>
           </div>
-          <div className="flex gap-4  max-h-[60px]">
+          <div className="flex gap-4  max-h-[60px]   justify-end">
             <div className="relative">
               <img
                 src={icons.search}
@@ -30,7 +30,7 @@ const BankAccountList = () => {
                 className="bg-white rounded-md md:min-w-[200px] h-full px-8 py-2"
               />
             </div>
-            <div className="bg-main text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer">
+            <div className="bg-main text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer min-w-[140px]">
               <img src={icons.plus} alt="" className="w-4 h-4 invert" />
               <button>افزودن مشتری</button>
             </div>

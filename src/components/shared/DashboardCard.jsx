@@ -2,7 +2,7 @@ import arrowDown from "../../assets/images/downArrow.svg";
 
 export default function DashboardCard({ card }) {
   return (
-    <div className="w-1/3 relative bg-white shadow-lg rounded-2xl  pt-16 cursor-pointer hover:shadow-2xl transition ">
+    <div className="col-span-1 relative bg-white shadow-lg rounded-2xl  pt-16 cursor-pointer hover:shadow-2xl transition ">
       {/* تصویر */}
       <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[92px] h-20 object-cover rounded-md shadow-md bg-main flex justify-center items-center">
         <img src={card.icon} alt="" className="w-10 h-10  invert m-auto" />

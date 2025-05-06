@@ -8,15 +8,15 @@ import LastActivities from "../components/LastActivities";
 const Dashboard = () => {
   return (
     <div className="p-4 flex flex-col gap-6  ">
-      <div className="flex flex-col md:flex-row justify-between w-full gap-2 mb-16">
+      <div className="flex flex-col md:flex-row justify-between w-full gap-2 mb-16 ">
         <div className="flex flex-col gap-1">
           <p className="text-[20px] font-bold">سلام محمدرضا !</p>
           <p className="text-[16px] font-semibold text-slate-800 ">
             یک آمار بگیر از اوضاع مشتریات
           </p>
         </div>
-        <div className="flex gap-4  max-h-[60px]">
-          <div className="relative">
+        <div className="flex gap-4  max-h-[60px]   justify-end">
+          <div className="relative w-full">
             <img
               src={icons.search}
               alt=""
@@ -25,26 +25,26 @@ const Dashboard = () => {
             <input
               type="text"
               placeholder="..."
-              className="bg-white rounded-md md:min-w-[200px] h-full px-8 py-2"
+              className="bg-white rounded-md md:min-w-[200px] h-full w-full px-8 py-2"
             />
           </div>
-          <div className="bg-main text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer">
+          <div className="bg-main text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer min-w-[160px]">
             <img src={icons.plus} alt="" className="w-4 h-4 invert" />
-            <button>افزودن مشتری</button>
+            <button >افزودن مشتری</button>
           </div>
         </div>
       </div>
 
-      <div className="flex  gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3  gap-6">
         {dashboardCards.map((item) => {
           return <DashboardCard card={item} />;
         })}
       </div>
-      <div className="flex gap-2  ">
-        <div className="w-1/2">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-2  ">
+        <div className="col-span-1 rounded-tr-[80px]  rounded-bl-[80px] p-8 bg-main">
           <Statistics />
         </div>
-        <div className="w-1/2">
+        <div className="col-span-1">
           <LastActivities />
         </div>
       </div>

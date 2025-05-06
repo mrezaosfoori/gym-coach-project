@@ -19,7 +19,7 @@ const AppLayout = () => {
           <Outlet />
         </div>
       </div>
-      <div className="min-w-[200px] hidden lg:block ">
+      <div className="min-w-[200px] hidden xl:block ">
         <LoginSidebar />
       </div>
     </div>
