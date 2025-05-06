@@ -1,12 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { clients } from "../lib/constants";
-import ClientCard from "../components/ClientCard"; // Remove if unused
-import images from "../lib/images";
-import icons from "../lib/icons";
+import { clients } from "../../lib/constants";
+import icons from "../../lib/icons";
 
 const BankAccountList = () => {
   const navigate = useNavigate();
-
   return (
     <>
       <div className="w-full p-2 h-full flex flex-col gap-4">

@@ -1,9 +1,9 @@
 import React from "react";
-import icons from "../lib/icons";
-import { dashboardCards } from "../lib/constants";
-import DashboardCard from "../components/shared/DashboardCard";
-import Statistics from "../components/Statistics";
-import LastActivities from "../components/LastActivities";
+import icons from "../../lib/icons";
+import { dashboardCards } from "../../lib/constants";
+import DashboardCard from "../../components/shared/DashboardCard";
+import Statistics from "../../components/Statistics";
+import LastActivities from "../../components/LastActivities";
 
 const Dashboard = () => {
   return (

@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { exercises } from "../lib/constants";
+import { exercises } from "../../lib/constants";
 
-import icons from "../lib/icons";
-import ExerciseCard from "../components/ExerciseCard ";
+import icons from "../../lib/icons";
+import ExerciseCard from "../../components/ExerciseCard ";
 import { useState } from "react";
-import Button from "../components/ui/button";
-import Modal from "../components/shared/Modal";
-import ExerciseForm from "./../components/forms/ExerciseForm";
-import ExerciseSideBar from "../components/ExerciseSideBar";
+import Button from "../../components/ui/button";
+import Modal from "../../components/shared/Modal";
+import ExerciseForm from "./../../components/forms/ExerciseForm";
+import ExerciseSideBar from "../../components/ExerciseSideBar";
 
 const Excrcises = () => {
   const navigate = useNavigate();

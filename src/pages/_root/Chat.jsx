@@ -1,6 +1,6 @@
-import ChatCard from "../components/ChatCard";
-import { chats } from "../lib/constants";
-import icons from "../lib/icons";
+import ChatCard from "../../components/ChatCard";
+import { chats } from "../../lib/constants";
+import icons from "../../lib/icons";
 
 const Chats = () => {
   return (
