@@ -7,12 +7,15 @@ import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { QueryProvider } from "./lib/queries/QueryProvider";
+import { AuthProvider } from "./lib/context/AuthProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <QueryProvider>
-      <App />
+     <AuthProvider>
+       <App />
+     </AuthProvider>
 
       <ToastContainer
         theme="dark"

@@ -1,5 +1,4 @@
-
-import { account} from "./config";
+import { account, appwriteConfig, databases } from "./config";
 import { ID, ImageGravity, Query } from "appwrite";
 
 export async function createUserAccount(data) {
@@ -7,7 +6,7 @@ export async function createUserAccount(data) {
     const newAccount = await account.create(
       ID.unique(),
       data.email,
-      data.password,
+      data.password
     );
 
     if (!newAccount) throw Error;
@@ -54,53 +53,54 @@ export async function signInAccount(user) {
       user.email,
       user.password
     );
+    console.log({ session });
 
     return session;
   } catch (error) {
     console.log(error, "signInAccount");
   }
 }
-// export async function signOutAccount() {
-//   try {
-//     const session = await account.deleteSession("current");
+export async function signOutAccount() {
+  try {
+    const session = await account.deleteSession("current");
 
-//     return session;
-//   } catch (error) {
-//     console.log(error, "error signOutAccount");
-//   }
-// }
-// export async function getAccount() {
-//   try {
-//     const currentAccount = await account.get();
+    return session;
+  } catch (error) {
+    console.log(error, "error signOutAccount");
+  }
+}
+export async function getAccount() {
+  try {
+    const currentAccount = await account.get();
 
-//     return currentAccount;
-//   } catch (error) {
-//     console.log(error, "getaccount");
-//   }
-// }
+    return currentAccount;
+  } catch (error) {
+    console.log(error, "getaccount");
+  }
+}
 
-// // ============================== GET USER
-// export async function getCurrentUser() {
-//   try {
-//     const currentAccount = await getAccount();
-//     console.log({ currentAccount });
+// ============================== GET USER
+export async function getCurrentUser() {
+  try {
+    const currentAccount = await getAccount();
+    console.log({ currentAccount });
 
-//     if (!currentAccount) throw Error;
+    if (!currentAccount) throw Error;
 
-//     const currentUser = await databases.listDocuments(
-//       appwriteConfig.databaseId,
-//       appwriteConfig.userCollectionId,
-//       [Query.equal("accountId", currentAccount.$id)]
-//     );
+    const currentUser = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      [Query.equal("accountId", currentAccount.$id)]
+    );
 
-//     if (!currentUser) throw Error;
+    if (!currentUser) throw Error;
 
-//     return currentUser.documents[0];
-//   } catch (error) {
-//     console.log(error, "getCurrentUser");
-//     return null;
-//   }
-// }
+    return currentUser.documents[0];
+  } catch (error) {
+    console.log(error, "getCurrentUser");
+    return null;
+  }
+}
 
 // export async function createPost(post: INewPost) {
 //   try {
@@ -276,10 +276,9 @@ export async function signInAccount(user) {
 //       }
 
 //       image={...image,imageUrl:fileUrl,imageId:uploadedFile.$id}
-  
 
 //     }
-  
+
 //     const tags = post.tags?.replace(/ /g, "").split(",") || [];
 
 //     const updatedPost = await databases.updateDocument(
@@ -315,7 +314,7 @@ export async function signInAccount(user) {
 //       appwriteConfig.postCollectionId,
 //       postId
 //     );
-   
+
 //     return { status: "ok" };
 //   } catch (error) {
 //     console.log(error);

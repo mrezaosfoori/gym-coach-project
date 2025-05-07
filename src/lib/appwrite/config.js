@@ -6,6 +6,7 @@ export const appwriteConfig ={
     databaseId: process.env.REACT_APP_DATABASE_ID,
     storageId: process.env.REACT_APP_STORAGE_ID,
     userCollectionId: process.env.REACT_APP_USER_COLLECTION_ID,
+    jwtSecret: process.env.REACT_APP_JWT_SECRET_TOKEN,
  
 }
 

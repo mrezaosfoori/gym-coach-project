@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import icons from "../../lib/icons";
 import { dashboardCards } from "../../lib/constants";
 import DashboardCard from "../../components/shared/DashboardCard";
 import Statistics from "../../components/Statistics";
 import LastActivities from "../../components/LastActivities";
+import { AuthContext } from "../../lib/context/AuthProvider";
+
 
 const Dashboard = () => {
+  const {user,isPending}  = useContext(AuthContext);
+  console.log(user.email,"user")
   return (
     <div className="p-4 flex flex-col gap-6  ">
       <div className="flex flex-col md:flex-row justify-between w-full gap-2 mb-16 ">
         <div className="flex flex-col gap-1">
-          <p className="text-[20px] font-bold">سلام محمدرضا !</p>
+          <p className="text-[20px] font-bold">سلام {user.email} !</p>
           <p className="text-[16px] font-semibold text-slate-800 ">
             یک آمار بگیر از اوضاع مشتریات
           </p>
@@ -30,7 +34,7 @@ const Dashboard = () => {
           </div>
           <div className="bg-main text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer min-w-[160px]">
             <img src={icons.plus} alt="" className="w-4 h-4 invert" />
-            <button >افزودن مشتری</button>
+            <button>افزودن مشتری</button>
           </div>
         </div>
       </div>
