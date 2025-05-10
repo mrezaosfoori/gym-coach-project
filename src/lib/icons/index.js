@@ -16,6 +16,7 @@ import clients from "../../assets/sidebars/users-svgrepo-com.svg";
 import goals from "../../assets/icons/target-marketing-goal-svgrepo-com.svg";
 import diet from "../../assets/icons/stopwatch-svgrepo-com.svg"
 import dashboardcards from "../../assets/icons/users-svgrepo-com (1).svg";
+import logout from "../../assets/icons/logout.svg";
 
 export default {
   driver,
@@ -36,4 +37,5 @@ export default {
   goals,
   dashboardcards,
   diet,
+  logout
 };

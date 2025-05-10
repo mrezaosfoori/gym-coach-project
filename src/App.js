@@ -9,6 +9,7 @@ import Chats from "./pages/_root/Chat";
 import AuthLayout from "./pages/_auth/AuthLayout";
 import Signin from "./pages/_auth/forms/SigninForm";
 import Signup from "./pages/_auth/forms/SignupForm";
+import Profile from "./pages/_root/Profile";
 
 function App() {
   return (
@@ -16,7 +17,6 @@ function App() {
       <Route element={<AuthLayout />}>
         <Route path="/sign-in" element={<Signin />} />
         <Route path="/sign-up" element={<Signup />} />
-        
       </Route>
       <Route element={<AppLayout />}>
         <Route path="/" element={<Dashboard />} />
@@ -25,6 +25,7 @@ function App() {
 
         <Route path="/chat" element={<Chats />} />
       </Route>
+      <Route path="/profile" element={<Profile />} />
 
       {/* Catch-all route for 404 */}
     </Routes>

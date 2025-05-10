@@ -9,12 +9,12 @@ import { AuthContext } from "../../lib/context/AuthProvider";
 
 const Dashboard = () => {
   const {user,isPending}  = useContext(AuthContext);
-  console.log(user.email,"user")
+  console.log(user?.email,"user")
   return (
     <div className="p-4 flex flex-col gap-6  ">
       <div className="flex flex-col md:flex-row justify-between w-full gap-2 mb-16 ">
         <div className="flex flex-col gap-1">
-          <p className="text-[20px] font-bold">سلام {user.email} !</p>
+          <p className="text-[20px] font-bold">سلام {user?.name} !</p>
           <p className="text-[16px] font-semibold text-slate-800 ">
             یک آمار بگیر از اوضاع مشتریات
           </p>

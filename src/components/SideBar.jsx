@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { sidebar } from "../lib/constants";
 import icons from "../lib/icons";
+import { useSignOutUser } from "../lib/queries/queriesAndMutations";
 
 const SideBar = () => {
   const navigate = useNavigate();
 
   const [activeMenu, setActiveMenu] = useState(null);
+
+  const { mutateAsync: signOut } = useSignOutUser();
+  const handleSignOut = async () => {
+    const response = await signOut();
+
+    console.log({ response });
+  };
 
   const handleMenuClick = (index, nav) => {
     setActiveMenu(index);
@@ -15,14 +23,14 @@ const SideBar = () => {
   };
 
   return (
-    <div className=" text-title-sm-regular   flex-col justify-between h-full p-3 rounded-[50px]   hidden lg:block bg-main w-[140px]">
+    <div className=" text-title-sm-regular   justify-between h-full p-3 rounded-[50px]   hidden lg:flex lg:flex-col bg-main w-[140px]">
       {/* Brand */}
       <div className="flex flex-col gap-1 items-center px-1 pt-4 mb-12">
         <div className="text-[28px] font-semibold text-white bg-[#6553B2] w-[56px] h-[56px] flex items-center justify-center rounded-2xl">
           <img src={icons.logo} alt="Logo" className="rounded-md" />
         </div>
         <p className="text-[21px] font-semibold text-white min-w-[110px] text-center">
-          کمک مربی 
+          کمک مربی
         </p>
       </div>
 
@@ -59,6 +67,12 @@ const SideBar = () => {
       </div>
 
       {/* Bottom Section */}
+      <button
+        onClick={() => handleSignOut()}
+        className="w-full  mt-auto flex justify-center"
+      >
+        <img src={icons.logout} alt="Logo" className="rounded-md invert mb-6" />
+      </button>
     </div>
   );
 };

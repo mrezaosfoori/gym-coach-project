@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import arrowDown from "../assets/images/downArrow.svg";
@@ -6,9 +6,18 @@ import arrowUp from "../assets/images/upArrow.svg";
 import { loginSidebarMenu } from "../lib/constants";
 import icons from "../lib/icons";
 import SemiCircleGauge from "./shared/SemiCircleGauge";
+import { useSignOutUser } from "../lib/queries/queriesAndMutations";
+import { AuthContext } from "../lib/context/AuthProvider";
 
 const LoginSidebar = () => {
+    const { user, isPending } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { mutateAsync: signOut } = useSignOutUser();
+  const handleSignOut = async () => {
+    const response = await signOut();
+    //Cookies.set('token', response.cookies.accessToken)
+    console.log({ response });
+  };
 
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -21,19 +30,28 @@ const LoginSidebar = () => {
   return (
     <div className="flex flex-col justify-between h-full py-[20px] px-4 bg-white shadow-xl ">
       {/* Brand */}
-      <div className="flex gap-2 items-center">
-        <img
-          src={icons.avatar}
-          alt="Logo"
-          className="rounded-full w-12 h-12 bg-white border-2 border-purple-400 p-1"
-        />
+      <div className="flex gap-2 justify-between items-center">
+        <div className="flex gap-2 items-center">
+          <img
+            src={icons.avatar}
+            alt="Logo"
+            className="rounded-full w-12 h-12 bg-white border-2 border-purple-400 p-1"
+            onClick={()=>navigate("/profile")}
+          />
 
-        <div>
-          <p className="text-[16px] font-semibold  line-clamp-1 min-w-fit">
-            محمدرضا عصفوری
-          </p>
-          <p className="text-[13px] text-slate-500">4 سال پیش</p>
+          <div>
+            <p className="text-[16px] font-semibold  line-clamp-1 min-w-fit">
+            {user.name}
+            </p>
+            <p className="text-[13px] text-slate-500">4 سال پیش</p>
+          </div>
         </div>
+        <button
+          onClick={() => handleSignOut()}
+          className="w-fit  mx-4 flex justify-center"
+        >
+          <img src={icons.logout} alt="Logo" className="rounded-md  " />
+        </button>
       </div>
 
       {/* Menu Items */}
@@ -74,8 +92,10 @@ const LoginSidebar = () => {
       {/* Bottom Section */}
       <div className="flex flex-col justify-center items-center gap-4 w-[300px] h-[300px] ">
         <p className="text-[22px]">هدف کاهش وزن</p>
-        <p className="text-[22px]">کاهش وزن:<span className="font-bold font ">5 kg</span> درماه  </p>
-        <SemiCircleGauge value={"20"} max={"100"}/>
+        <p className="text-[22px]">
+          کاهش وزن:<span className="font-bold font ">5 kg</span> درماه{" "}
+        </p>
+        <SemiCircleGauge value={"20"} max={"100"} />
       </div>
     </div>
   );

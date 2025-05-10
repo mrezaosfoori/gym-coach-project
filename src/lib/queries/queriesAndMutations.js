@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 
 import { getIranCities } from "../api/api";
-import { createUserAccount, getAccount, getCurrentUser, signInAccount, signOutAccount } from "../appwrite/api";
+import { createUserAccount, getAccount, getCurrentUser, signInAccount, signOutAccount, updateAccount } from "../appwrite/api";
 
 export const useCreateNewUser = () => {
   return useMutation({
@@ -11,6 +11,11 @@ export const useCreateNewUser = () => {
 export const useSignInUser = () => {
   return useMutation({
     mutationFn: (data) => signInAccount(data),
+  });
+};
+export const useUpdateAccount = () => {
+  return useMutation({
+    mutationFn: (data) => updateAccount(data),
   });
 };
 export const useSignOutUser = () => {

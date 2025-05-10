@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { account, appwriteConfig, databases } from "./config";
 import { ID, ImageGravity, Query } from "appwrite";
 
@@ -26,6 +27,7 @@ export async function createUserAccount(data) {
 
     return newAccount;
   } catch (error) {
+    toast.error(error.message);
     console.log(error, "createUserAccount");
     return error;
   }
@@ -57,7 +59,20 @@ export async function signInAccount(user) {
 
     return session;
   } catch (error) {
+    toast.error(error.message);
     console.log(error, "signInAccount");
+  }
+}
+
+export async function updateAccount(data) {
+  try {
+    await account.updateName(data.name);
+    await account.updateEmail(data.email,data.password);
+    await account.updatePhone(data.phone,data.password);
+    console.log("Profile updated successfully");
+  } catch (error) {
+    toast.error(error.message);
+    console.log(error, "updateAccount");
   }
 }
 export async function signOutAccount() {
