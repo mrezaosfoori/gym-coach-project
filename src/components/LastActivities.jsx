@@ -5,7 +5,7 @@ const LastActivities = () => {
  
   return (
     <>
-      <div className="w-full p-2 h-full flex flex-col gap-4 bg-white">
+      <div className="w-full p-2 h-full flex flex-col gap-4 bg-white shadow-md  rounded-md shadow-slate-400">
         <div className="flex flex-col md:flex-row justify-between w-full gap-2 border-b-2 p-2">
           <p className="text-[20px] font-bold">فعالیت های اخیر</p>
           <button className="  text-blue-600 font-bold" > مشاهده همه</button>

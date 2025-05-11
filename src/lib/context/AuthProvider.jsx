@@ -1,23 +1,10 @@
-import React, { Children, createContext, useContext, useEffect, useState } from "react";
-import { useGetAccount, useGetCurrentUser } from "../queries/queriesAndMutations";
+import React, { createContext } from "react";
+import { useGetAccount } from "../queries/queriesAndMutations";
 import { Loader } from "lucide-react";
-import { async } from "./../api/api";
 
 const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
-  const { mutateAsync: getUser, isPending } = useGetAccount();
-  const [user, setuser] = useState({})
-
-  console.log({user})
-
-  const handleCheckUser = async () => {
-    const response = await getUser();
-    setuser(response)
-  };
-
-  useEffect(() => {
-    handleCheckUser();
-  }, []);
+  const { data: user, isPending } = useGetAccount();
 
   if (isPending) {
     <Loader />;
@@ -26,8 +13,8 @@ const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
-        user:user,
-        isPending:isPending,
+        user: user,
+        isPending: isPending,
       }}
     >
       {children}

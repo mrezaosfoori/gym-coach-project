@@ -67,8 +67,8 @@ export async function signInAccount(user) {
 export async function updateAccount(data) {
   try {
     await account.updateName(data.name);
-    await account.updateEmail(data.email,data.password);
-    await account.updatePhone(data.phone,data.password);
+    await account.updateEmail(data.email, data.password);
+    await account.updatePhone(data.phone, data.password);
     console.log("Profile updated successfully");
   } catch (error) {
     toast.error(error.message);
@@ -336,3 +336,40 @@ export async function getCurrentUser() {
 //   }
 
 // }
+
+export async function createClient(client) {
+  try {
+    const newClient = await databases.createDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.clientCollectionId,
+      ID.unique(),
+      client
+    );
+
+    if (!newClient) throw Error;
+    console.log(newClient, "newAccount");
+
+    return newClient;
+  } catch (error) {
+    toast.error(error.message);
+    console.log(error, "createUserAccount");
+    return error;
+  }
+}
+export async function getAllClients() {
+  try {
+    const allClients = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.clientCollectionId
+    );
+
+    if (!allClients) throw Error;
+    console.log(allClients, "newAccount");
+
+    return allClients;
+  } catch (error) {
+    toast.error(error.message);
+    console.log(error, "createUserAccount");
+    return error;
+  }
+}

@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 import arrowDown from "../assets/images/downArrow.svg";
-import arrowUp from "../assets/images/upArrow.svg";
+
 import { loginSidebarMenu } from "../lib/constants";
 import icons from "../lib/icons";
 import SemiCircleGauge from "./shared/SemiCircleGauge";
 import { useSignOutUser } from "../lib/queries/queriesAndMutations";
 import { AuthContext } from "../lib/context/AuthProvider";
+import Cookies from "js-cookie"
 
 const LoginSidebar = () => {
     const { user, isPending } = useContext(AuthContext);
@@ -15,8 +16,16 @@ const LoginSidebar = () => {
   const { mutateAsync: signOut } = useSignOutUser();
   const handleSignOut = async () => {
     const response = await signOut();
-    //Cookies.set('token', response.cookies.accessToken)
+   
     console.log({ response });
+    console.log(!!response);
+    if(!!response){
+      console.log("sign out")
+      navigate("/sign-in")
+       Cookies.remove('a_session_console')
+       Cookies.remove('a_session_console_legacy')
+    }
+    
   };
 
   const [activeMenu, setActiveMenu] = useState(null);
@@ -41,7 +50,7 @@ const LoginSidebar = () => {
 
           <div>
             <p className="text-[16px] font-semibold  line-clamp-1 min-w-fit">
-            {user.name}
+            {user?.name}
             </p>
             <p className="text-[13px] text-slate-500">4 سال پیش</p>
           </div>

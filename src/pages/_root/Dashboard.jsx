@@ -9,6 +9,9 @@ import { AuthContext } from "../../lib/context/AuthProvider";
 
 const Dashboard = () => {
   const {user,isPending}  = useContext(AuthContext);
+  if(isPending){
+    return <p>loading..</p>
+  }
   console.log(user?.email,"user")
   return (
     <div className="p-4 flex flex-col gap-6  ">
@@ -44,8 +47,8 @@ const Dashboard = () => {
           return <DashboardCard card={item} />;
         })}
       </div>
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-2  ">
-        <div className="col-span-1 rounded-tr-[80px]  rounded-bl-[80px] p-8 bg-main">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8  ">
+        <div className="col-span-2 rounded-tr-[80px]  rounded-bl-[80px] p-8 bg-main">
           <Statistics />
         </div>
         <div className="col-span-1">

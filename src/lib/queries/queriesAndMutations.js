@@ -1,7 +1,16 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 
 import { getIranCities } from "../api/api";
-import { createUserAccount, getAccount, getCurrentUser, signInAccount, signOutAccount, updateAccount } from "../appwrite/api";
+import {
+  createClient,
+  createUserAccount,
+  getAccount,
+  getAllClients,
+  getCurrentUser,
+  signInAccount,
+  signOutAccount,
+  updateAccount,
+} from "../appwrite/api";
 
 export const useCreateNewUser = () => {
   return useMutation({
@@ -24,8 +33,9 @@ export const useSignOutUser = () => {
   });
 };
 export const useGetAccount = () => {
-  return useMutation({
-    mutationFn: (data) => getAccount(data),
+  return useQuery({
+    queryKey: ["getAccount"],
+    queryFn: getAccount,
   });
 };
 export const useGetCurrentUser = () => {
@@ -34,3 +44,16 @@ export const useGetCurrentUser = () => {
   });
 };
 
+
+export const useCreateClient = () => {
+  return useMutation({
+    mutationFn: (data) => createClient(data),
+  });
+};
+
+export const useGetAllClients = () => {
+  return useQuery({
+    queryKey: ["getAllClients"],
+    queryFn: getAllClients,
+  });
+};

@@ -37,6 +37,7 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.3.8",
     "react-hook-form": "^7.53.2",
+    "react-loading-skeleton": "^3.5.0",
     "react-multi-date-picker": "^4.5.2",
     "react-notifications": "^1.7.4",
     "react-number-format": "^4.9.4",

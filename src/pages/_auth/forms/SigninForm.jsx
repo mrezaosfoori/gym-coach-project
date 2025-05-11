@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import CustomInput from "../../../components/custom/CustomInput";
 import {  useSignInUser } from "../../../lib/queries/queriesAndMutations";
 import { toast } from "react-toastify";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function SigninForm() {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ export default function SigninForm() {
     handleSubmit,
     formState: { errors },
   } = useForm({});
+  const queryClient = useQueryClient()
 
   const { mutateAsync: signIn, isPending } = useSignInUser();
 
@@ -18,6 +20,10 @@ export default function SigninForm() {
     const response = await signIn(data);
     if (response?.current) {
       toast.success("ورود موفقیت آمیز بود");
+      
+      queryClient.invalidateQueries({ queryKey: ['getAccount'] })
+
+
       navigate("/");
     }
   };
