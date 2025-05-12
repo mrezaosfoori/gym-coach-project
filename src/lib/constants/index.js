@@ -304,4 +304,19 @@ export const clients = [
     { day: 'یکشنبه', date: '۱۴۰۴/۰۲/۰۷', activities: 22 },
   ];
   
+
+  export const clientStatusOptions = [
+  {
+    value: "pending",
+    label: "در صف انتظار",
+    class: "text-secondary-90 bg-secondary-10 rounded-md px-[10px] py-1",
+  },
+  {
+    value: "settlment",
+    label: "تسویه",
+    class:
+      "text-secondary-90 bg-secondary-10 rounded-md px-[10px] py-1 min-w-[100px]",
+  },
+];
+
   

@@ -343,7 +343,7 @@ export async function createClient(client) {
       appwriteConfig.databaseId,
       appwriteConfig.clientCollectionId,
       ID.unique(),
-      client
+      {...client,status:"pending"}
     );
 
     if (!newClient) throw Error;

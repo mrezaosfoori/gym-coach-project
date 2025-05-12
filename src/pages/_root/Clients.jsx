@@ -10,13 +10,19 @@ import {
   useGetAllClients,
 } from "../../lib/queries/queriesAndMutations";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { clientStatusOptions } from "../../lib/constants";
+import ValueFinder from "../../components/shared/ValueFinder";
 
 const BankAccountList = () => {
-  
   const [showForm, setShowForm] = useState(false);
-  const { data: clients, isPending,refetch,isRefetching } = useGetAllClients();
+  const {
+    data: clients,
+    isPending,
+    refetch,
+    isRefetching,
+  } = useGetAllClients();
 
-  if (isPending||isRefetching) {
+  if (isPending || isRefetching) {
     return <ClientSkeleton />;
   }
   return (
@@ -42,9 +48,12 @@ const BankAccountList = () => {
                 className="bg-white rounded-md md:min-w-[200px] h-full px-8 py-2"
               />
             </div>
-            <div onClick={() => setShowForm(true)} className="bg-main text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer min-w-[140px]">
+            <div
+              onClick={() => setShowForm(true)}
+              className="bg-main text-white px-1 md:px-4 rounded-lg py-1 md:py-2 flex gap-2 items-center cursor-pointer min-w-[140px]"
+            >
               <img src={icons.plus} alt="" className="w-4 h-4 invert" />
-              <button >افزودن مشتری</button>
+              <button>افزودن مشتری</button>
             </div>
           </div>
         </div>
@@ -54,7 +63,7 @@ const BankAccountList = () => {
             <table className="w-full border border-gray-300 rounded-lg overflow-hidden text-right">
               <thead className="bg-slate-300 border">
                 <tr>
-                  <th className="px-4 py-2">نام مشتری</th>
+                  <th className="px-4 py-2"> مشتری</th>
                   <th className="px-4 py-2"> برنامه</th>
                   <th className="px-4 py-2"> 7 روز اخیر</th>
                   <th className="px-4 py-2">وضعیت</th>
@@ -69,12 +78,15 @@ const BankAccountList = () => {
                     <td className="px-4 py-2">
                       <div className="flex gap-1 items-center">
                         <img src={icons.avatar} alt="" className="w-4 h-4 " />
-                        <p> {client.name}</p>
+                        <p> {client.name || client.email}</p>
                       </div>
                     </td>
-                    <td className="px-4 py-2">{client.email}</td>
+                    <td className="px-4 py-2"></td>
                     <td className="px-4 py-2">{client.program}</td>
-                    <td className="px-4 py-2">{client.status}</td>
+                   
+                    <td className="px-4 py-2">
+                      <ValueFinder data={clientStatusOptions} value={client.status} />
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -84,14 +96,16 @@ const BankAccountList = () => {
           )}
         </div>
       </div>
-      {showForm && <ClientForm onClose={() => setShowForm(false)} refetch={refetch} />}
+      {showForm && (
+        <ClientForm onClose={() => setShowForm(false)} refetch={refetch} />
+      )}
     </>
   );
 };
 
 export default BankAccountList;
 
-const ClientForm = ({ onClose,refetch }) => {
+const ClientForm = ({ onClose, refetch }) => {
   const navigate = useNavigate();
   const {
     register,
@@ -103,11 +117,11 @@ const ClientForm = ({ onClose,refetch }) => {
 
   const processForm = async (data) => {
     const response = await createClient(data);
-    console.log(response,"client")
+    console.log(response, "client");
     if (response) {
       toast.success("لینک دعوت ارسال شد");
       onClose("");
-      refetch()
+      refetch();
     }
   };
   return (
@@ -146,7 +160,7 @@ const ClientForm = ({ onClose,refetch }) => {
               disabled={isPending}
               className="bg-main text-white px-4 py-1 rounded disabled:bg-slate-400"
             >
-             { isPending?"...ارسال":"ارسال"}
+              {isPending ? "...ارسال" : "ارسال"}
             </button>
           </div>
         </form>
